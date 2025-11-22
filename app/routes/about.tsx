@@ -2,7 +2,7 @@ import { Badge } from '@/components/ui/badge';
 
 export default function AboutPage() {
 	return (
-		<div className='space-y-32 py-32'>
+		<div className='space-y-32 py-32 '>
 			<title>
 				Struktur Organisasi Asisten Laboratorium Informatika | ASCII
 			</title>
@@ -10,7 +10,7 @@ export default function AboutPage() {
 				name='description'
 				content='Struktur Organisasi Asisten Laboratorium Informatika (ASCII)'
 			/>
-			<section className='max-w-3xl mx-auto w-full space-y-4 text-center'>
+			<section className='space-y-4 text-center'>
 				<Badge className='mx-auto'>ASCII</Badge>
 				<h2 className='text-2xl font-bold lg:text-4xl text-balance leading-relaxed'>
 					Struktur Organisasi Asisten Laboratorium Informatika
@@ -30,7 +30,7 @@ export default function AboutPage() {
 				/>
 			</section>
 
-			<section className='max-w-3xl mx-auto w-full space-y-4 text-center'>
+			<section className='space-y-4 text-center'>
 				<Badge className='mx-auto'>Prakikum</Badge>
 				<h2 className='text-2xl font-bold lg:text-4xl text-balance leading-relaxed'>
 					Koordinator Matakuliah Praktikum

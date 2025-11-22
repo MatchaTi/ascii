@@ -3,7 +3,7 @@ import NewsCard from './news-card';
 
 export default function News() {
 	return (
-		<section className='max-w-3xl mx-auto w-full space-y-4 text-center'>
+		<section className='space-y-4 text-center'>
 			<Badge className='mx-auto'>Berita</Badge>
 			<h2 className='text-2xl font-bold lg:text-4xl text-balance leading-relaxed'>
 				Berita Seputar Praktikum
@@ -12,7 +12,7 @@ export default function News() {
 				Dapatkan informasi terbaru seputar praktikum, termasuk
 				pengumuman, berita, dan update penting lainnya.
 			</p>
-			<div className='grid gap-4 mx-auto rounded-2xl lg:grid-cols-2'>
+			<div className='mt-16 grid gap-4 mx-auto rounded-2xl lg:grid-cols-2'>
 				<NewsCard
 					title='Selamat Datang Aslab Baru Semester Ganjil 2025/2026'
 					description='Selamat atas bergabungnya asisten laboratorium baru di Praktikum Universitas Mulawarman.'

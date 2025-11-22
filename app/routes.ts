@@ -10,6 +10,7 @@ export default [
 		index('routes/home.tsx'),
 		route('/tentang-kami', 'routes/about.tsx'),
 		route('/berita', 'routes/news.tsx'),
+		route('/kontak', 'routes/contact.tsx'),
 	]),
 
 	route('docs/*', 'docs/page.tsx'),

@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
 const buttonVariant = cva(
-	'font-semibold cursor-pointer shadow active:scale-95 text-sm',
+	'font-semibold cursor-pointer shadow active:scale-95 text-sm flex items-center justify-center gap-2',
 	{
 		variants: {
 			variant: {

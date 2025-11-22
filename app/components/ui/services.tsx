@@ -4,7 +4,7 @@ import { ServiceCard } from './service-card';
 
 export default function Services() {
 	return (
-		<section className='max-w-3xl mx-auto w-full space-y-4 text-center'>
+		<section className='space-y-4 text-center'>
 			<Badge className='mx-auto'>Layanan</Badge>
 			<h2 className='text-2xl font-bold lg:text-4xl text-balance leading-relaxed'>
 				Layanan yang Tersedia
@@ -13,7 +13,8 @@ export default function Services() {
 				Kami menyediakan berbagai layanan untuk mendukung proses belajar
 				Kamu. Berikut adalah layanan yang tersedia:
 			</p>
-			<div className='grid gap-4 p-6 mx-auto bg-fd-muted rounded-2xl shadow lg:grid-cols-2'>
+
+			<div className='mt-16 grid gap-4 p-6 mx-auto bg-fd-muted rounded-2xl shadow lg:grid-cols-2'>
 				<ServiceCard
 					title='Jadwal Praktikum'
 					description='Jadwal praktikum yang terupdate dan mudah diakses.'

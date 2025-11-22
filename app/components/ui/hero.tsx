@@ -3,7 +3,7 @@ import { Badge } from './badge';
 
 export default function Hero() {
 	return (
-		<section className='max-w-3xl mx-auto w-full space-y-4 text-center'>
+		<section className='space-y-4 text-center'>
 			<Badge className='mx-auto'>Welcome</Badge>
 			<h1 className='text-2xl font-bold lg:text-4xl text-balance leading-relaxed'>
 				Selamat datang di E-Lab Praktikum Universitas Mulawarman
