@@ -12,7 +12,7 @@ export default function News() {
 				Dapatkan informasi terbaru seputar praktikum, termasuk
 				pengumuman, berita, dan update penting lainnya.
 			</p>
-			<div className='mt-16 grid gap-4 mx-auto rounded-2xl lg:grid-cols-2'>
+			<div className='mt-16 grid gap-4 mx-auto lg:grid-cols-2'>
 				<NewsCard
 					title='Selamat Datang Aslab Baru Semester Ganjil 2025/2026'
 					description='Selamat atas bergabungnya asisten laboratorium baru di Praktikum Universitas Mulawarman.'
