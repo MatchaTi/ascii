@@ -3,13 +3,8 @@ import { classDetailSchema } from '@/schemas/class-detail';
 import { studentSchema } from '@/schemas/student';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { BookMarked, Monitor, Phone } from 'lucide-react';
-import type { ShouldRevalidateFunctionArgs } from 'react-router';
 import type { Route } from './+types/class-detail';
 import { Badge } from '@/components/ui/badge';
-
-export function shouldRevalidate(_: ShouldRevalidateFunctionArgs) {
-	return true;
-}
 
 export async function loader({ params }: Route.LoaderArgs) {
 	const { id } = params;
@@ -51,7 +46,7 @@ export function HydrateFallback() {
 			<div className='text-center space-y-4'>
 				<Badge className='mx-auto'>Praktikum</Badge>
 				<h2 className='text-2xl font-bold lg:text-4xl text-balance leading-relaxed'>
-					Memuat Pembagian Kelas Praktikum...
+					Memuat detail kelas...
 				</h2>
 			</div>
 		</div>
