@@ -11,7 +11,15 @@ export default {
 		const excluded: string[] = ['/api/search', '/pembagian-kelas'];
 
 		for (const path of getStaticPaths()) {
-			if (!excluded.includes(path)) paths.push(path);
+			if (excluded.includes(path)) {
+				continue;
+			}
+
+			if (path.startsWith('/pembagian-kelas/')) {
+				continue;
+			}
+
+			paths.push(path);
 		}
 
 		for await (const entry of glob('**/*.mdx', { cwd: 'content/docs' })) {
