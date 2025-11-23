@@ -7,8 +7,15 @@ import type { ShouldRevalidateFunctionArgs } from 'react-router';
 import { Link } from 'react-router';
 import type { Route } from './+types/class-division';
 
-export function shouldRevalidate(arg: ShouldRevalidateFunctionArgs) {
+export function shouldRevalidate(_: ShouldRevalidateFunctionArgs) {
 	return true;
+}
+
+export function headers(_: Route.HeadersArgs) {
+	return {
+		'Cache-Control':
+			'public, max-age=60, s-maxage=60, stale-while-revalidate=30',
+	};
 }
 
 export async function loader() {
