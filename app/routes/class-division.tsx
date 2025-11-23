@@ -5,6 +5,11 @@ import { Search, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router';
 import type { Route } from './+types/class-division';
+import type { ShouldRevalidateFunctionArgs } from 'react-router';
+
+export function shouldRevalidate(arg: ShouldRevalidateFunctionArgs) {
+	return true;
+}
 
 export async function loader() {
 	const response = await sheetsService.getSheetValues('List Matakuliah');

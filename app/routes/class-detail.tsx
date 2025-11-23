@@ -4,6 +4,11 @@ import { studentSchema } from '@/schemas/student';
 import { classDetailSchema } from '@/schemas/class-detail';
 import { BookMarked, Monitor, Phone } from 'lucide-react';
 import { Callout } from 'fumadocs-ui/components/callout';
+import type { ShouldRevalidateFunctionArgs } from 'react-router';
+
+export function shouldRevalidate(arg: ShouldRevalidateFunctionArgs) {
+	return true;
+}
 
 export async function loader({ params }: Route.LoaderArgs) {
 	const { id } = params;
