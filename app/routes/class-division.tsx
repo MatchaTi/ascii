@@ -1,45 +1,29 @@
-import { sheetsService } from '@/api/gsheets.server';
 import { Badge } from '@/components/ui/badge';
-import { courseSchema } from '@/schemas/course';
 import { Search, X } from 'lucide-react';
 import { useState } from 'react';
-import type { ShouldRevalidateFunctionArgs } from 'react-router';
-import { data, Link } from 'react-router';
+import { Link } from 'react-router';
 import type { Route } from './+types/class-division';
+import type { Course } from '@/schemas/course';
 
-export function shouldRevalidate(_: ShouldRevalidateFunctionArgs) {
-	return true;
-}
+// export function shouldRevalidate(_: ShouldRevalidateFunctionArgs) {
+// 	return true;
+// }
 
-export function headers(_: Route.HeadersArgs) {
-	return {
-		'Cache-Control': 'public, no-cache, no-store, must-revalidate',
-		'CDN-Cache-Control': 'max-age=0, s-maxage=0',
-		'Vercel-CDN-Cache-Control': 'max-age=0, s-maxage=0',
-		Pragma: 'no-cache',
-		Expires: '0',
-	};
-}
+// export function headers(_: Route.HeadersArgs) {
+// 	return {
+// 		'Cache-Control': 'public, no-cache, no-store, must-revalidate',
+// 		'CDN-Cache-Control': 'max-age=0, s-maxage=0',
+// 		'Vercel-CDN-Cache-Control': 'max-age=0, s-maxage=0',
+// 		Pragma: 'no-cache',
+// 		Expires: '0',
+// 	};
+// }
 
 export async function loader() {
-	const response = await sheetsService.getSheetValues('List Matakuliah');
+	const res = await fetch(import.meta.env.VITE_API_BASE_URL);
+	const data: Course[] = await res.json();
 
-	if (!response) return [];
-
-	const courses = sheetsService.transformValuesToObjectsWithSchema(
-		response,
-		courseSchema,
-	);
-
-	return data(courses, {
-		headers: {
-			'Cache-Control': 'public, no-cache, no-store, must-revalidate',
-			'CDN-Cache-Control': 'max-age=0, s-maxage=0',
-			'Vercel-CDN-Cache-Control': 'max-age=0, s-maxage=0',
-			Pragma: 'no-cache',
-			Expires: '0',
-		},
-	});
+	return data;
 }
 
 export async function clientLoader({ serverLoader }: Route.ClientLoaderArgs) {
