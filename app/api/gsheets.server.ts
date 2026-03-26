@@ -38,13 +38,22 @@ export class SheetsService {
 	transformValuesToObjects<T>(values: string[][]): T[] {
 		if (values.length === 0) return [];
 
-		const headers = values[0];
+		const headers = values[0].map((header) =>
+			header.replace(/\uFEFF/g, '').trim(),
+		);
 		const dataRows = values.slice(1);
 
 		return dataRows.map((row) => {
 			const obj: Record<string, string> = {};
 			headers.forEach((header, index) => {
-				obj[header] = row[index] || '';
+				if (!header) return;
+
+				const value = row[index] ?? '';
+				const existingValue = obj[header];
+
+				if (existingValue === undefined || existingValue === '') {
+					obj[header] = value;
+				}
 			});
 			return obj as T;
 		});
