@@ -1,4 +1,3 @@
-import { Callout } from 'fumadocs-ui/components/callout';
 import { Badge } from '@/components/ui/badge';
 import { Kanban } from '@/components/ui/kanban';
 import type { Activity } from '@/constants/activities';
@@ -59,10 +58,10 @@ export default function Schedule({ loaderData }: Route.ComponentProps) {
 					Semester Genap 2025/2026
 				</p>
 
-				<Callout title='Jadwal Ramadhan' className='text-left'>
-					Jadwal yang dipakai adalah jadwal yang sudah disesuaikan
-					dengan Ramadhan.
-				</Callout>
+				{/* <Callout title='Jadwal Ramadhan' className='text-left'> */}
+				{/* 	Jadwal yang dipakai adalah jadwal yang sudah disesuaikan */}
+				{/* 	dengan Ramadhan. */}
+				{/* </Callout> */}
 
 				<Kanban activities={schedules} />
 			</section>

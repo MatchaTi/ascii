@@ -2,6 +2,7 @@ import z from 'zod';
 
 export const scheduleSchema = z.object({
 	'Kode Kelas': z.string(),
+	'Nama Kelas': z.string(),
 	'Mata Kuliah': z.string(),
 	Hari: z.string(),
 	Jam: z.string(),

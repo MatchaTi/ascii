@@ -69,9 +69,8 @@ export default function ClassDetailPage({ loaderData }: Route.ComponentProps) {
 						</h1>
 
 						<h2 className='text-xs lg:text-base text-balance'>
-							{classDetail['Hari Ramadhan']}{' '}
-							{classDetail['Jam Ramadhan']}{' '}
-							{classDetail['Tempat']}
+							{classDetail['Hari ']} {classDetail.Jam}{' '}
+							{classDetail.Tempat}
 						</h2>
 					</div>
 					<img
@@ -84,13 +83,11 @@ export default function ClassDetailPage({ loaderData }: Route.ComponentProps) {
 				<div className='flex justify-end mb-12'>
 					<div className='space-y-2 w-fit'>
 						<div className='flex gap-4 items-center w-fit'>
-							{classDetail['Aslab']
-								.split(',')
-								.map((assistant) => (
-									<div key={assistant} className='text-sm'>
-										{assistant}
-									</div>
-								))}
+							{classDetail.Aslab.split(',').map((assistant) => (
+								<div key={assistant} className='text-sm'>
+									{assistant}
+								</div>
+							))}
 						</div>
 						<div className='p-4 w-full rounded border bg-fd-muted text-fd-muted-foreground'>
 							<Monitor className='mx-auto' />
